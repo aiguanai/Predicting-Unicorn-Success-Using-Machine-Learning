@@ -1,9 +1,0 @@
-Framework,Hypothesis,P-Value,Status
-Porter Force 1: Competitive Rivalry,Low rivalry → Faster growth,0.22779591733649437,⚠️  Not Validated
-Porter Force 2: Threat of New Entrants,High barriers → Higher valuation,1.0705644469378978e-05,✅ Validated
-Porter Force 3: Bargaining Power of Suppliers,VC supplier power → Affects outcomes,0.08794391004043338,⚠️  Not Validated
-Porter Force 4: Bargaining Power of Buyers,Buyer power → Affects valuation,0.45903651418519875,⚠️  Not Validated
-Porter Force 5: Threat of Substitutes,Low substitutes → Affects growth,0.16390708029237777,⚠️  Not Validated
-RBV: Geographic Resource,Tech hub → Advantage,0.07704199164541067,⚠️  Not Validated
-RBV: VC Network Resource,Top VC → Faster growth,0.000244110907130716,✅ Validated
-Network Effects Theory,Platform/Network → Higher valuation,1.0,⚠️  Not Validated

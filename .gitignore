@@ -14,3 +14,24 @@ __pycache__/
 build/
 dist/
 *.egg-info/
+
+# Output directory (optional - uncomment if you don't want to track outputs)
+# @output/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data files (if large)
+# *.xlsx
+# *.csv
+# *.pkl

@@ -1,0 +1,9 @@
+Framework,Hypothesis,P-Value,Effect_Size,Effect_Interpretation,ML_Feature,ML_Importance,Status
+Porter Force 1: Competitive Rivalry,Low rivalry -> Faster growth,0.22779591733649437,0.001147837209189615,negligible,Industry features,,[NOT VALIDATED]
+Porter Force 2: Threat of New Entrants,High barriers -> Higher valuation,1.0705644469378978e-05,0.0151864475982318,small,Investor_Count,0.0016025169909338,[VALIDATED]
+Porter Force 3: Bargaining Power of Suppliers,VC supplier power -> Affects outcomes,0.08794391004043338,0.09853658216421089,negligible,Has_Top_VC,0.0012281999566526,[NOT VALIDATED]
+Porter Force 4: Bargaining Power of Buyers,Buyer power -> Affects valuation,0.45903651418519875,0.04198438230579281,negligible,Industry features,,[NOT VALIDATED]
+Porter Force 5: Threat of Substitutes,Low substitutes -> Affects growth,0.16390708029237777,0.09171234062167241,negligible,Is_Tech_Intensive,0.0031701952639212,[NOT VALIDATED]
+RBV: Geographic Resource,Tech hub -> Advantage,0.07704199164541067,0.10054301684051893,negligible,Is_Tech_Hub,0.002548009679417,[NOT VALIDATED]
+RBV: VC Network Resource,Top VC -> Faster growth,0.000244110907130716,0.2122792970773322,small,Has_Top_VC,0.0012281999566526,[VALIDATED]
+Network Effects Theory,Platform/Network -> Higher valuation,1.0,0.0,N/A,N/A,,[NOT VALIDATED]

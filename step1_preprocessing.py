@@ -7,6 +7,25 @@ import pandas as pd
 import numpy as np
 import pickle
 
+"""
+Step 1: Data Preprocessing & Feature Engineering
+================================================
+Run this FIRST before ML models
+
+This script:
+1. Loads and cleans unicorn company data
+2. Engineers strategic features (geographic, investor, industry, temporal)
+3. Encodes categorical variables
+4. Creates train-test split
+5. Scales features
+6. Saves preprocessed data for downstream analysis
+"""
+
+import pandas as pd
+import numpy as np
+import pickle
+import os
+
 print("="*80)
 print("STEP 1: DATA PREPROCESSING & FEATURE ENGINEERING")
 print("="*80)
@@ -16,7 +35,16 @@ print("="*80)
 # ============================================================================
 
 print("\n1. Loading augmented data...")
-df = pd.read_excel('unicorn_data_augmented.xlsx')
+try:
+    df = pd.read_excel('unicorn_data_augmented.xlsx')
+except FileNotFoundError:
+    print("   ⚠️  unicorn_data_augmented.xlsx not found. Trying CB-Insights file...")
+    try:
+        df = pd.read_excel('CB-Insights_Global-Unicorn-Club_2025.xlsx')
+        print("   ✓ Loaded CB-Insights file")
+    except FileNotFoundError:
+        print("   ❌ ERROR: No data file found. Please ensure unicorn_data_augmented.xlsx exists.")
+        raise
 
 print(f"   Total companies: {len(df)}")
 print(f"   Columns: {list(df.columns)}")
@@ -271,14 +299,19 @@ data_package = {
     'scaler': scaler
 }
 
-with open('preprocessed_data.pkl', 'wb') as f:
+# Save to output directory
+import os
+os.makedirs('output/models', exist_ok=True)
+os.makedirs('output/data', exist_ok=True)
+
+with open('output/models/preprocessed_data.pkl', 'wb') as f:
     pickle.dump(data_package, f)
 
-print(f"   ✓ Saved: preprocessed_data.pkl")
+print(f"   ✓ Saved: output/models/preprocessed_data.pkl")
 
 # Also save as CSV for inspection
-df_encoded.to_csv('data_with_features.csv', index=False)
-print(f"   ✓ Saved: data_with_features.csv")
+df_encoded.to_csv('output/data/data_with_features.csv', index=False)
+print(f"   ✓ Saved: output/data/data_with_features.csv")
 
 # ============================================================================
 # SUMMARY STATISTICS
