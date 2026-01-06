@@ -66,7 +66,7 @@ Follow these steps to set up and run the complete analysis pipeline.
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/aiguanai/Predicting-Unicorn-Success-Using-Machine-Learning.git
    cd Unicorn
    ```
 
