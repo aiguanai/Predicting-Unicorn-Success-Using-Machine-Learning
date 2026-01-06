@@ -54,91 +54,76 @@ Unicorn/
 
 ## 🚀 Quick Start
 
-Get up and running in minutes! This guide will help you set up the project and run the complete analysis pipeline.
+Get up and running in minutes! Follow these steps to set up and run the complete analysis pipeline.
 
 ### Prerequisites
 
-- **Python 3.8+** (check with `python --version`)
-- **pip** package manager (usually comes with Python)
+- Python 3.8+ (check with `python --version`)
+- pip package manager
 
-### Installation Steps
+### Installation
 
-#### 1. Clone the Repository
-```bash
-git clone <repository-url>
-cd Unicorn
-```
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd Unicorn
+   ```
 
-#### 2. Create Virtual Environment
-```bash
-# Create virtual environment
-python -m venv venv
+2. **Create and activate virtual environment**
+   ```bash
+   python -m venv venv
+   
+   # Windows
+   .\venv\Scripts\activate.ps1
+   
+   # macOS/Linux
+   source venv/bin/activate
+   ```
 
-# Activate it
-# On Windows:
-.\venv\Scripts\activate.ps1
-
-# On macOS/Linux:
-source venv/bin/activate
-```
-
-#### 3. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ### Data Setup
 
-Place the required data file in the project root directory:
-- **`CB-Insights_Global-Unicorn-Club_2025.xlsx`** - Main unicorn dataset (required)
+Place `CB-Insights_Global-Unicorn-Club_2025.xlsx` in the project root directory.
 
-> **Note**: The `unicorn_data_augmented.xlsx` file will be automatically created during preprocessing if it doesn't exist.
+> **Note:** `unicorn_data_augmented.xlsx` will be created automatically during preprocessing if missing.
 
-### Running the Analysis Pipeline
+### Run Analysis Pipeline
 
-Run these scripts in order to perform the complete analysis:
+Execute these scripts in order:
 
-#### Step 1: Data Preprocessing
+**Step 1: Preprocess Data**
 ```bash
 python step1_preprocessing.py
 ```
-**What it does:**
-- Loads and cleans the unicorn dataset
-- Engineers 45+ strategic features (temporal, geographic, investor, industry, valuation)
+- Cleans data and engineers 45+ features
 - Creates train/test splits (80/20)
-- Saves preprocessed data to `output/models/preprocessed_data.pkl`
+- Output: `output/models/preprocessed_data.pkl`
 
-#### Step 2: Train ML Models
+**Step 2: Train ML Models**
 ```bash
 python step2_ml_models_final.py
 ```
-**What it does:**
-- Trains 6 ML algorithms (Ridge, Lasso, ElasticNet, Random Forest, Gradient Boosting, XGBoost)
-- Performs hyperparameter tuning with 5-fold cross-validation
-- Generates model comparison and feature importance analysis
-- Saves production model to `output/models/final_production_model.pkl`
-- **Best Result**: Ridge Regression achieves **R² = 0.8545** (RMSE = 1.94 years)
+- Trains 6 ML algorithms with hyperparameter tuning
+- Best model: Ridge Regression (R² = 0.8545, RMSE = 1.94 years)
+- Output: `output/models/final_production_model.pkl`
 
-#### Step 3: Strategic Framework Analysis
+**Step 3: Strategic Analysis**
 ```bash
 python step3_porters_analysis.py
 ```
-**What it does:**
-- Tests Porter's Five Forces framework (all 5 forces separately)
-- Validates Resource-Based View (RBV) framework
-- Evaluates Network Effects theory
-- Calculates effect sizes and statistical significance
-- Generates comprehensive visualizations and reports
+- Validates Porter's Five Forces, RBV, and Network Effects frameworks
+- Generates visualizations and reports
+- Output: `output/reports/` and `output/visualizations/`
 
-#### Optional: Generate Impact Reports
+**Optional: Generate Impact Reports**
 ```bash
 python generate_impact_reports.py
 ```
-**What it does:**
-- Creates targeted reports for different stakeholders:
-  - `ENTREPRENEUR_INSIGHTS.md` - Actionable insights for founders
-  - `INVESTOR_FRAMEWORK.md` - Validated investment criteria
-  - `RESEARCH_METHODOLOGY.md` - Web scraping methodology documentation
+- Creates stakeholder-specific reports (Entrepreneurs, Investors, Researchers)
 
 ## 📊 Output Files
 
