@@ -35,3 +35,51 @@ Thumbs.db
 # *.xlsx
 # *.csv
 # *.pkl
+
+# Research papers (LaTeX files and related scripts)
+ieee_paper_latex.txt
+springer_lnbip_latex.txt
+phase1.txt
+generate_ieee_visualizations.py
+*.tex
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# Output directories
+output/
+ieee_paper/
+
+# Generated figures and documents
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.eps
+
+# Data files
+unicorn_data*.xlsx
+unicorn_data*.csv
+unicorn_final.csv
+company_foundingyr.csv
+data_with_features.csv
+failed_companies*.csv
+preprocessed_data.pkl
+*.db
+*.sqlite
+
+# Log files
+scraping_log.txt
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
