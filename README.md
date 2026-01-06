@@ -54,7 +54,6 @@ Unicorn/
 
 ## 🚀 Quick Start
 
-```
 
 Get up and running in minutes! Follow these steps to set up and run the complete analysis pipeline.
 
