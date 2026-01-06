@@ -54,78 +54,91 @@ Unicorn/
 
 ## 🚀 Quick Start
 
+Get up and running in minutes! This guide will help you set up the project and run the complete analysis pipeline.
+
 ### Prerequisites
 
-- Python 3.8 or higher
-- pip package manager
+- **Python 3.8+** (check with `python --version`)
+- **pip** package manager (usually comes with Python)
 
-### Installation
+### Installation Steps
 
-1. **Clone or download this repository**
+#### 1. Clone the Repository
+```bash
+git clone <repository-url>
+cd Unicorn
+```
 
-2. **Create a virtual environment** (recommended):
-   ```bash
-   python -m venv venv
-   
-   # On Windows:
-   .\venv\Scripts\activate.ps1
-   
-   # On macOS/Linux:
-   source venv/bin/activate
-   ```
+#### 2. Create Virtual Environment
+```bash
+# Create virtual environment
+python -m venv venv
 
-3. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+# Activate it
+# On Windows:
+.\venv\Scripts\activate.ps1
 
-### Data Requirements
+# On macOS/Linux:
+source venv/bin/activate
+```
 
-Place your data files in the project root:
-- `CB-Insights_Global-Unicorn-Club_2025.xlsx` - Main unicorn dataset (required)
-- `unicorn_data_augmented.xlsx` - Augmented dataset with founding years (optional, will be created if missing)
+#### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-### Running the Pipeline
+### Data Setup
 
-**Step 1: Data Preprocessing**
+Place the required data file in the project root directory:
+- **`CB-Insights_Global-Unicorn-Club_2025.xlsx`** - Main unicorn dataset (required)
+
+> **Note**: The `unicorn_data_augmented.xlsx` file will be automatically created during preprocessing if it doesn't exist.
+
+### Running the Analysis Pipeline
+
+Run these scripts in order to perform the complete analysis:
+
+#### Step 1: Data Preprocessing
 ```bash
 python step1_preprocessing.py
 ```
-This will:
-- Load and clean the data
-- Engineer comprehensive features (geographic, investor, industry, temporal, valuation)
-- Create train/test splits (80/20)
-- Save preprocessed data to `output/models/preprocessed_data.pkl`
+**What it does:**
+- Loads and cleans the unicorn dataset
+- Engineers 45+ strategic features (temporal, geographic, investor, industry, valuation)
+- Creates train/test splits (80/20)
+- Saves preprocessed data to `output/models/preprocessed_data.pkl`
 
-**Step 2: Final Production ML Model**
+#### Step 2: Train ML Models
 ```bash
 python step2_ml_models_final.py
 ```
-This will:
-- Train multiple ML models (Ridge, Random Forest, Gradient Boosting, XGBoost, Ensemble)
-- Perform hyperparameter tuning with cross-validation
-- Generate comprehensive model comparison and feature importance
-- Save production-ready model to `output/models/final_production_model.pkl`
-- **Best Model**: Ridge Regression with **R² = 0.8545** (85.45% variance explained)
+**What it does:**
+- Trains 6 ML algorithms (Ridge, Lasso, ElasticNet, Random Forest, Gradient Boosting, XGBoost)
+- Performs hyperparameter tuning with 5-fold cross-validation
+- Generates model comparison and feature importance analysis
+- Saves production model to `output/models/final_production_model.pkl`
+- **Best Result**: Ridge Regression achieves **R² = 0.8545** (RMSE = 1.94 years)
 
-**Step 3: Enhanced Strategic Framework Analysis**
+#### Step 3: Strategic Framework Analysis
 ```bash
 python step3_porters_analysis.py
 ```
-This will:
-- Analyze Porter's Five Forces (all 5 separately) with effect sizes
-- Test Resource-Based View framework with statistical validation
-- Evaluate Network Effects theory
-- Generate enhanced visualizations and comprehensive reports
-- Provide strategic recommendations based on validated frameworks
+**What it does:**
+- Tests Porter's Five Forces framework (all 5 forces separately)
+- Validates Resource-Based View (RBV) framework
+- Evaluates Network Effects theory
+- Calculates effect sizes and statistical significance
+- Generates comprehensive visualizations and reports
 
-**Optional: Generate Impact Reports**
+#### Optional: Generate Impact Reports
 ```bash
 python generate_impact_reports.py
 ```
-This will:
-- Generate targeted reports for Entrepreneurs, Investors, and Researchers
-- Create actionable insights based on validated findings
+**What it does:**
+- Creates targeted reports for different stakeholders:
+  - `ENTREPRENEUR_INSIGHTS.md` - Actionable insights for founders
+  - `INVESTOR_FRAMEWORK.md` - Validated investment criteria
+  - `RESEARCH_METHODOLOGY.md` - Web scraping methodology documentation
 
 ## 📊 Output Files
 
