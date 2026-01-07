@@ -11,7 +11,7 @@ This project investigates what makes unicorn companies successful by:
 
 ## 🎯 Objectives
 
-1. **Data Augmentation**: Systematically web scrape founding years for 1,290 companies from multiple sources to enable growth analysis
+1. **Data Augmentation**: Systematically web scrape founding years for 1,295 companies from multiple sources to enable growth analysis
 2. **Growth Speed Prediction**: Estimate time-to-unicorn (years from founding to $1B valuation) through regression analysis
 3. **Factor Importance Ranking**: Quantify which variables most strongly predict success
 4. **Theoretical Validation**: Interpret findings through Porter's Five Forces, Resource-Based View, and network effects frameworks
